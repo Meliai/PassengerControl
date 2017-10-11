@@ -22,9 +22,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".FeedbackActivity"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".FinalScreenActivity"
             android:screenOrientation="portrait" />
         <activity
