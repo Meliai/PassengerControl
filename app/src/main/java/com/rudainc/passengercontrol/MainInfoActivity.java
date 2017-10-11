@@ -8,6 +8,7 @@ import android.app.DialogFragment;
 import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatSpinner;
 import android.text.format.DateFormat;
 import android.util.Log;
@@ -30,11 +31,13 @@ import java.util.Calendar;
 import java.util.List;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class MainInfoActivity extends Activity  implements Validator.ValidationListener {
+public class MainInfoActivity extends AppCompatActivity implements Validator.ValidationListener {
 
-    String transports[] = {"Тролейбус", "Автобус", "Трамвай"};
+    String transports[] ;
+
     @BindView(R.id.tvDate)
     TextView tvDate;
     @BindView(R.id.tvTime)
@@ -82,11 +85,9 @@ public class MainInfoActivity extends Activity  implements Validator.ValidationL
 
     @OnClick(R.id.go)
     void forward() {
-        Log.i("MAIN","gogo");
-        Intent intent = new Intent(MainInfoActivity.this,FeedbackActivity.class);
-        startActivity(intent);
 
-//        validator.validate();
+
+        validator.validate();
 
     }
 
@@ -97,9 +98,10 @@ public class MainInfoActivity extends Activity  implements Validator.ValidationL
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_main_info);
+        ButterKnife.bind(this);
 
+        transports = getResources().getStringArray(R.array.transport);
         // get the current date
         final Calendar c = Calendar.getInstance();
         mYear = c.get(Calendar.YEAR);
@@ -111,10 +113,10 @@ public class MainInfoActivity extends Activity  implements Validator.ValidationL
         date = mDay + "." + (mMonth+1) + "." + mYear;
         time = sdf.format(Calendar.getInstance().getTime());
 
-//        tvDate.setText(date);
-//        tvTime.setText(time);
+        tvDate.setText(date);
+        tvTime.setText(time);
 
-//        initSpinner();
+        initSpinner();
 
         validator = new Validator(this);
         validator.setValidationListener(this);

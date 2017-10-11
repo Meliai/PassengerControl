@@ -12,6 +12,12 @@
     <item>Невидача квитків водієм;</item>
     <item>Некоректна поведінка кондуктора;</item>
     <item>Невидача квитків кондуктором.</item>
-
 </string-array>
+
+    <string-array name="transport">
+        <item>Тролейбус</item>
+        <item>Автобус</item>
+        <item>Трамвай</item>
+
+    </string-array>
 </resources>

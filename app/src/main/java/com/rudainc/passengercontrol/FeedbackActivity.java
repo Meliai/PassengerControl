@@ -3,6 +3,7 @@ package com.rudainc.passengercontrol;
 import android.app.Activity;
 import android.os.Bundle;
 
+import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 
@@ -21,7 +22,7 @@ public class FeedbackActivity extends Activity {
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_feedback);
+        ButterKnife.bind(this);
     }
 }
