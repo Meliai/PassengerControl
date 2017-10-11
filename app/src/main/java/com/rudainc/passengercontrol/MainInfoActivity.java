@@ -6,6 +6,7 @@ import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.AppCompatSpinner;
 import android.text.format.DateFormat;
@@ -79,9 +80,13 @@ public class MainInfoActivity extends Activity  implements Validator.ValidationL
         newFragment.show(getFragmentManager(), "timePicker");
     }
 
-    @OnClick
+    @OnClick(R.id.go)
     void forward() {
-        validator.validate();
+        Log.i("MAIN","gogo");
+        Intent intent = new Intent(MainInfoActivity.this,FeedbackActivity.class);
+        startActivity(intent);
+
+//        validator.validate();
 
     }
 
@@ -143,7 +148,8 @@ public class MainInfoActivity extends Activity  implements Validator.ValidationL
 
     @Override
     public void onValidationSucceeded() {
-//        FeedbackActivity_.intent(this).start();
+        Intent intent = new Intent(MainInfoActivity.this,IssuesActivity.class);
+        startActivity(intent);
         saveData();
     }
 
