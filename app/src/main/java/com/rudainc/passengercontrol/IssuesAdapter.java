@@ -1,6 +1,8 @@
 package com.rudainc.passengercontrol;
 
 import android.content.Context;
+import android.database.Cursor;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,28 +10,34 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 
-import java.util.ArrayList;
-
-
 public class IssuesAdapter extends RecyclerView.Adapter<IssuesAdapter.IssuesAdapterViewHolder> {
 
     private final Context context;
     private String[] mIssuesList;
+    private final IssueAdapterOnClickHandler mClickHandler;
 
-    public IssuesAdapter(Context context, String[] list) {
+    public IssuesAdapter(Context context, String[] list, IssueAdapterOnClickHandler clickHandler) {
         this.context = context;
         this.mIssuesList = list;
+        mClickHandler = clickHandler;
     }
 
 
-    class IssuesAdapterViewHolder extends RecyclerView.ViewHolder {
+    class IssuesAdapterViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         private TextView mIssue;
 
         IssuesAdapterViewHolder(View view) {
             super(view);
             mIssue = (TextView) view.findViewById(R.id.tv_issue);
+        view.setOnClickListener(this);
+        }
 
+        @Override
+        public void onClick(View v) {
+            int adapterPosition = getAdapterPosition();
+            mClickHandler.onClick(mIssuesList[adapterPosition]);
+            v.setBackgroundColor(ContextCompat.getColor(context,R.color.colorPrimary));
         }
     }
 
@@ -54,5 +62,12 @@ public class IssuesAdapter extends RecyclerView.Adapter<IssuesAdapter.IssuesAdap
     public int getItemCount() {
         if (null == mIssuesList) return 0;
         return mIssuesList.length;
+    }
+
+
+    private Cursor mCursor;
+
+    public interface IssueAdapterOnClickHandler {
+        void onClick(String position);
     }
 }
