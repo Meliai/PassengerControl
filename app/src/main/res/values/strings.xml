@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Passenger Control</string>
+    <string name="app_name">Пасажирський Контроль</string>
 
     <!--Main Screen-->
     <string name="date">Дата</string>
@@ -9,25 +9,25 @@
     <string name="board_number">Бортовий номер</string>
 
     <string name="bus">Автобус</string>
-    <string name="troleybus">Тролейбус</string>
-    <string name="tramvay">Трамвай</string>
+    <string name="trolleybus">Тролейбус</string>
+    <string name="tram">Трамвай</string>
 
+    <!--Issues-->
+    <string name="point_1">Незадовільний санітарний стан рухомого складу зовні</string>
+    <string name="point_2">Незадовільний санітарний стан в салоні рухомого складу</string>
+    <string name="point_3">Відсутність стандартних маршрутних покажчиків на рухомому складі (№ маршруту, кінцеві пункти)</string>
+    <string name="point_4">Наявність пошкоджених пасажирських сидінь</string>
+    <string name="point_5">Наявність несправного освітлення салону</string>
+    <string name="point_6">Наявність несправного компостера</string>
+    <string name="point_7">Некоректна поведінка водія</string>
+    <string name="point_8">Не оголошення зупинок громадського транспорту</string>
+    <string name="point_9">Невидача квитків водієм</string>
+    <string name="point_10">Некоректна поведінка кондуктора</string>
+    <string name="point_11">Невидача квитків кондуктором</string>
 
     <!--Feedback-->
-    <string name="feedback"></string>
-    <string name="point_1">Незадовільний санітарний стан рухомого складу зовні;</string>
-    <string name="point_2">Незадовільний санітарний стан в салоні рухомого складу;</string>
-    <string name="point_3">Відсутність стандартних маршрутних покажчиків на рухомому складі (№ маршруту, кінцеві пункти);</string>
-    <string name="point_4">Наявність пошкоджених пасажирських сидінь;</string>
-    <string name="point_5">Наявність несправного освітлення салону;</string>
-    <string name="point_6">Наявність несправного компостера;</string>
-    <string name="point_7">Некоректна поведінка водія;</string>
-    <string name="point_8">Не оголошення зупинок громадського транспорту;</string>
-    <string name="point_9">Невидача квитків водієм;</string>
-    <string name="point_10">Некоректна поведінка кондуктора;</string>
-    <string name="point_11">Невидача квитків кондуктором.</string>
     <string name="other">Інше:</string>
-    <string name="other_input_field">Будь ласка, вкажіть причину...</string>
+    <string name="other_input_field">Будь ласка, вкажіть причину…</string>
 
     <!--Final Screen-->
     <string name="send">Відправити</string>
@@ -41,5 +41,8 @@
     <string name="forward">Вперед</string>
     <string name="back">Назад</string>
     <string name="error_empty_field">Поле не має бути пустим</string>
+    <string name="ua">Українська</string>
+    <string name="ru">Російська</string>
+    <string name="en">Англійська</string>
 
 </resources>

@@ -1,0 +1,45 @@
+<resources>
+    <!--<string name="app_name">Пасажирський Контроль</string>-->
+
+    <!--&lt;!&ndash;Main Screen&ndash;&gt;-->
+    <!--<string name="date">Date</string>-->
+    <!--<string name="time">Time</string>-->
+    <!--<string name="transport">Type of transport</string>-->
+    <!--<string name="route">Route</string>-->
+    <!--<string name="board_number">Board number</string>-->
+
+    <!--<string name="bus">Bus</string>-->
+    <!--<string name="trolleybus">Trolleybus</string>-->
+    <!--<string name="tram">Tram</string>-->
+
+    <!--&lt;!&ndash;Issues&ndash;&gt;-->
+    <!--<string name="point_1">Unsatisfactory sanitary condition of the rolling stock outside</string>-->
+    <!--<string name="point_2">Unsatisfactory sanitary condition in the cabin of rolling stock</string>-->
+    <!--<string name="point_3">Lack of standard route pointer on a rolling stock (route number, end points)</string>-->
+    <!--<string name="point_4">The presence of damaged passenger seats</string>-->
+    <!--<string name="point_5">The presence of faulty lighting of the cabin</string>-->
+    <!--<string name="point_6">The presence of a defective compost</string>-->
+    <!--<string name="point_7">Driver\'s inappropriate behavior</string>-->
+    <!--<string name="point_8">Do not post public transport stops</string>-->
+    <!--<string name="point_9">Non-showing of driver\'s tickets</string>-->
+    <!--<string name="point_10">Invalid behavior of the conductor</string>-->
+    <!--<string name="point_11">Unchecked tickets by the conductor</string>-->
+
+    <!--&lt;!&ndash;Feedback&ndash;&gt;-->
+    <!--<string name="other">Other:</string>-->
+    <!--<string name="other_input_field">Please indicate the reason…</string>-->
+
+    <!--&lt;!&ndash;Final Screen&ndash;&gt;-->
+    <!--<string name="send">Send</string>-->
+    <!--<string name="cancel">Cancel</string>-->
+    <!--<string name="comments">Comments</string>-->
+    <!--<string name="phone_number">+38 050 332 01 23</string>-->
+    <!--<string name="email">monitoring@kpt.kiev.ua</string>-->
+
+
+    <!--&lt;!&ndash;Common Strings&ndash;&gt;-->
+    <!--<string name="forward">Forward</string>-->
+    <!--<string name="back">Back</string>-->
+    <!--<string name="error_empty_field">Field should not be empty</string>-->
+
+</resources>

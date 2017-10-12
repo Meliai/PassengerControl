@@ -1,0 +1,44 @@
+<resources>
+    <!--<string name="app_name">Пасажирський Контроль</string>-->
+
+    <!--&lt;!&ndash;Main Screen&ndash;&gt;-->
+    <!--<string name="date">Дата</string>-->
+    <!--<string name="time">Время</string>-->
+    <!--<string name="transport">Вид транспорта</string>-->
+    <!--<string name="route">Маршрут</string>-->
+    <!--<string name="board_number">Бортовой номер</string>-->
+
+    <!--<string name="bus">Автобус</string>-->
+    <!--<string name="trolleybus">Троллейбус</string>-->
+    <!--<string name="tram">Трамвай</string>-->
+
+
+    <!--&lt;!&ndash;Feedback&ndash;&gt;-->
+    <!--<string name="point_1">Неудовлетворительное санитарное состояние подвижного состава снаружы</string>-->
+    <!--<string name="point_2">Неудовлетворительное санитарное состояние в салоне подвижного состава</string>-->
+    <!--<string name="point_3">Отсутствие стандартных маршрутных указателей на подвижном составе (№ маршрута, конечные пункты)</string>-->
+    <!--<string name="point_4">Наличие поврежденных пассажирских сидений</string>-->
+    <!--<string name="point_5">Наличие неисправного освещения салона</string>-->
+    <!--<string name="point_6">Наличие неисправного компостера</string>-->
+    <!--<string name="point_7">Некорректное поведение водителя</string>-->
+    <!--<string name="point_8">Не объявление остановок общественного транспорта</string>-->
+    <!--<string name="point_9">Невыдача билетов водителем</string>-->
+    <!--<string name="point_10">Некорректное поведение кондуктора</string>-->
+    <!--<string name="point_11">Невыдача билетов кондуктором</string>-->
+
+    <!--<string name="other">Другое:</string>-->
+    <!--<string name="other_input_field">Пожалуйста, укажите причину…</string>-->
+
+    <!--&lt;!&ndash;Final Screen&ndash;&gt;-->
+    <!--<string name="send">Отправить</string>-->
+    <!--<string name="cancel">Очистить</string>-->
+    <!--<string name="comments">Комментарии</string>-->
+    <!--<string name="phone_number">+38 050 332 01 23</string>-->
+    <!--<string name="email">monitoring@kpt.kiev.ua</string>-->
+
+    <!--&lt;!&ndash;Common Strings&ndash;&gt;-->
+    <!--<string name="forward">Вперед</string>-->
+    <!--<string name="back">Назад</string>-->
+    <!--<string name="error_empty_field">Поле не должно быть пустым</string>-->
+
+</resources>
