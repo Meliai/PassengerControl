@@ -28,7 +28,6 @@ public class IssuesActivity extends AppCompatActivity implements IssuesAdapter.I
 
     @OnClick(R.id.forward)
     void forward() {
-        Log.i("Issues", issues.toString());
         Intent intent = new Intent(this, FinalScreenActivity.class);
         intent.putStringArrayListExtra(EXTRA_DATA, issues);
         startActivity(intent);

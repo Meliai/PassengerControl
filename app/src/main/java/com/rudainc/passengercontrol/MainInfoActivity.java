@@ -10,7 +10,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatSpinner;
 import android.text.format.DateFormat;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -35,7 +34,7 @@ import butterknife.OnClick;
 
 public class MainInfoActivity extends AppCompatActivity implements Validator.ValidationListener {
 
-    String transports[] ;
+    String transports[];
 
     @BindView(R.id.tvDate)
     TextView tvDate;
@@ -84,10 +83,7 @@ public class MainInfoActivity extends AppCompatActivity implements Validator.Val
 
     @OnClick(R.id.go)
     void forward() {
-
-
         validator.validate();
-
     }
 
     private void saveData() {
@@ -109,7 +105,7 @@ public class MainInfoActivity extends AppCompatActivity implements Validator.Val
 
         SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
 
-        date = mDay + "." + (mMonth+1) + "." + mYear;
+        date = mDay + "." + (mMonth + 1) + "." + mYear;
         time = sdf.format(Calendar.getInstance().getTime());
 
         tvDate.setText(date);
@@ -119,7 +115,6 @@ public class MainInfoActivity extends AppCompatActivity implements Validator.Val
 
         validator = new Validator(this);
         validator.setValidationListener(this);
-
 
     }
 
@@ -134,14 +129,11 @@ public class MainInfoActivity extends AppCompatActivity implements Validator.Val
         spTransport.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                Log.i("Spinner", "selected" + transports[position]);
                 transport = transports[position];
-
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-                Log.i("Spinner", "unselected" + transports[0]);
                 transport = transports[0];
             }
         });
@@ -149,7 +141,7 @@ public class MainInfoActivity extends AppCompatActivity implements Validator.Val
 
     @Override
     public void onValidationSucceeded() {
-        Intent intent = new Intent(MainInfoActivity.this,IssuesActivity.class);
+        Intent intent = new Intent(MainInfoActivity.this, IssuesActivity.class);
         startActivity(intent);
         saveData();
     }
@@ -168,6 +160,7 @@ public class MainInfoActivity extends AppCompatActivity implements Validator.Val
             }
         }
     }
+
 
     @SuppressLint("ValidFragment")
     public class TimePickerFragment extends DialogFragment
@@ -211,7 +204,7 @@ public class MainInfoActivity extends AppCompatActivity implements Validator.Val
 
         public void onDateSet(DatePicker view, int year, int month, int day) {
             // Do something with the date chosen by the user
-            date = day + "." + (month+1) + "." + year;
+            date = day + "." + (month + 1) + "." + year;
             tvDate.setText(date);
         }
     }

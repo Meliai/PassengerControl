@@ -7,6 +7,8 @@
     <string name="transport">Вид транспорту</string>
     <string name="route">Маршрут</string>
     <string name="board_number">Бортовий номер</string>
+    <string name="issues">Недоліки</string>
+    <string name="mail_subject">Відгук щодо роботи транспорту #</string>
 
     <string name="bus">Автобус</string>
     <string name="trolleybus">Тролейбус</string>
@@ -44,5 +46,6 @@
     <string name="ua">Українська</string>
     <string name="ru">Російська</string>
     <string name="en">Англійська</string>
+    <string name="thank_you">Дякую що ви не байдужі!</string>
 
 </resources>

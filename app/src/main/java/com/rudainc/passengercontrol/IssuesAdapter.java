@@ -1,7 +1,6 @@
 package com.rudainc.passengercontrol;
 
 import android.content.Context;
-import android.database.Cursor;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -30,14 +29,14 @@ public class IssuesAdapter extends RecyclerView.Adapter<IssuesAdapter.IssuesAdap
         IssuesAdapterViewHolder(View view) {
             super(view);
             mIssue = (TextView) view.findViewById(R.id.tv_issue);
-        view.setOnClickListener(this);
+            view.setOnClickListener(this);
         }
 
         @Override
         public void onClick(View v) {
             int adapterPosition = getAdapterPosition();
             mClickHandler.onClick(mIssuesList[adapterPosition]);
-            v.setBackgroundColor(ContextCompat.getColor(context,R.color.colorPrimary));
+            v.setBackgroundColor(ContextCompat.getColor(context, R.color.colorPrimary));
         }
     }
 
@@ -46,8 +45,7 @@ public class IssuesAdapter extends RecyclerView.Adapter<IssuesAdapter.IssuesAdap
         Context context = viewGroup.getContext();
         int layoutIdForListItem = R.layout.item_issue;
         LayoutInflater inflater = LayoutInflater.from(context);
-        boolean shouldAttachToParentImmediately = false;
-        View view = inflater.inflate(layoutIdForListItem, viewGroup, shouldAttachToParentImmediately);
+        View view = inflater.inflate(layoutIdForListItem, viewGroup, false);
         return new IssuesAdapterViewHolder(view);
     }
 
@@ -63,9 +61,6 @@ public class IssuesAdapter extends RecyclerView.Adapter<IssuesAdapter.IssuesAdap
         if (null == mIssuesList) return 0;
         return mIssuesList.length;
     }
-
-
-    private Cursor mCursor;
 
     public interface IssueAdapterOnClickHandler {
         void onClick(String position);
