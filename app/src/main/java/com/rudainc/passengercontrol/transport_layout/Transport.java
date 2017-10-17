@@ -1,10 +1,10 @@
 package com.rudainc.passengercontrol.transport_layout;
 
-class Transport {
-    String title;
-    int image;
+public class Transport {
+    private String title;
+    private int image;
 
-    public Transport(String title, int image) {
+    Transport(String title, int image) {
         this.title = title;
         this.image = image;
     }
@@ -13,7 +13,7 @@ class Transport {
         return title;
     }
 
-    public int getImage() {
+    int getImage() {
         return image;
     }
 }

@@ -42,7 +42,7 @@
     <!--Common Strings-->
     <string name="forward">Далі</string>
     <string name="back">Назад</string>
-    <string name="error_empty_field">Поле не має бути пустим</string>
+    <string name="error_empty_field">Поле не має бути порожнім</string>
     <string name="ua">Українська</string>
     <string name="ru">Російська</string>
     <string name="en">Англійська</string>
@@ -53,4 +53,8 @@
     <string name="cd_calendar">Calendar icon</string>
     <string name="cd_time">Clock icon</string>
 
+
+    <!--Ads-->
+    <string name="ads_mobile_id">ca-app-pub-1227764705187744~5637028893</string>
+    <string name="ads_banner"> ca-app-pub-1227764705187744/5604760375</string>
 </resources>

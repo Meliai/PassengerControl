@@ -7,11 +7,8 @@ import android.app.DialogFragment;
 import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.AppCompatSpinner;
 import android.text.format.DateFormat;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -19,9 +16,13 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.mobsandgeeks.saripaar.ValidationError;
 import com.mobsandgeeks.saripaar.Validator;
 import com.mobsandgeeks.saripaar.annotation.NotEmpty;
+import com.rudainc.passengercontrol.transport_layout.Transport;
+import com.rudainc.passengercontrol.transport_layout.TransportLinearLayout;
 import com.rudainc.passengercontrol.util.Data;
 
 import java.text.SimpleDateFormat;
@@ -32,21 +33,27 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class MainInfoActivity extends BaseActivity implements Validator.ValidationListener {
+public class MainInfoActivity extends BaseActivity implements Validator.ValidationListener, TransportLinearLayout.OnTransportChangeListener {
 
     String transports[];
 
     @BindView(R.id.tvDate)
     TextView tvDate;
+
     @BindView(R.id.tvTime)
     TextView tvTime;
 
     @NotEmpty
     @BindView(R.id.etRoute)
     EditText etRoute;
+
     @NotEmpty
     @BindView(R.id.etBoardNumber)
     EditText etBoardNumber;
+
+    @BindView(R.id.ad_container)
+    AdView mAdView;
+
     private int mYear;
     private int mMonth;
     private int mDay;
@@ -95,6 +102,9 @@ public class MainInfoActivity extends BaseActivity implements Validator.Validati
         setContentView(R.layout.activity_main_info);
         ButterKnife.bind(this);
 
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+
         transports = getResources().getStringArray(R.array.transport);
         // get the current date
         final Calendar c = Calendar.getInstance();
@@ -110,32 +120,10 @@ public class MainInfoActivity extends BaseActivity implements Validator.Validati
         tvDate.setText(date);
         tvTime.setText(time);
 
-        initSpinner();
 
         validator = new Validator(this);
         validator.setValidationListener(this);
 
-    }
-
-    private void initSpinner() {
-        arrayAdapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_spinner_item, transports);
-
-        arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-//        spTransport.setAdapter(arrayAdapter);
-//
-//        spTransport.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-//            @Override
-//            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-//                transport = transports[position];
-//            }
-//
-//            @Override
-//            public void onNothingSelected(AdapterView<?> parent) {
-//                transport = transports[0];
-//            }
-//        });
     }
 
     @Override
@@ -158,6 +146,11 @@ public class MainInfoActivity extends BaseActivity implements Validator.Validati
                 Toast.makeText(this, message, Toast.LENGTH_LONG).show();
             }
         }
+    }
+
+    @Override
+    public void onChange(Transport item) {
+        transport = item.getTitle();
     }
 
 
