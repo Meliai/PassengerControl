@@ -2,11 +2,11 @@
     <string name="app_name">Пасажирський Контроль</string>
 
     <!--Main Screen-->
-    <string name="date">Дата</string>
-    <string name="time">Час</string>
-    <string name="transport">Вид транспорту</string>
-    <string name="route">Маршрут</string>
-    <string name="board_number">Бортовий номер</string>
+    <string name="date">Дата:</string>
+    <string name="time">Час:</string>
+    <string name="transport">Оберіть вид транспорту:</string>
+    <string name="route">Номер маршруту:</string>
+    <string name="board_number">Бортовий номер:</string>
     <string name="issues">Недоліки</string>
     <string name="mail_subject">Відгук щодо роботи транспорту #</string>
 
@@ -40,12 +40,17 @@
 
 
     <!--Common Strings-->
-    <string name="forward">Вперед</string>
+    <string name="forward">Далі</string>
     <string name="back">Назад</string>
     <string name="error_empty_field">Поле не має бути пустим</string>
     <string name="ua">Українська</string>
     <string name="ru">Російська</string>
     <string name="en">Англійська</string>
     <string name="thank_you">Дякую що ви не байдужі!</string>
+
+
+    <!--Content Description-->
+    <string name="cd_calendar">Calendar icon</string>
+    <string name="cd_time">Clock icon</string>
 
 </resources>

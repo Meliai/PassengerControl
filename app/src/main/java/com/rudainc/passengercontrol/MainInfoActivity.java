@@ -32,7 +32,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class MainInfoActivity extends AppCompatActivity implements Validator.ValidationListener {
+public class MainInfoActivity extends BaseActivity implements Validator.ValidationListener {
 
     String transports[];
 
@@ -40,8 +40,7 @@ public class MainInfoActivity extends AppCompatActivity implements Validator.Val
     TextView tvDate;
     @BindView(R.id.tvTime)
     TextView tvTime;
-    @BindView(R.id.transport)
-    AppCompatSpinner spTransport;
+
     @NotEmpty
     @BindView(R.id.etRoute)
     EditText etRoute;
@@ -69,13 +68,13 @@ public class MainInfoActivity extends AppCompatActivity implements Validator.Val
             };
     private Validator validator;
 
-    @OnClick(R.id.rlDatePicker)
+    @OnClick(R.id.llDatePicker)
     void pickDate() {
         DialogFragment newFragment = new DatePickerFragment();
         newFragment.show(getFragmentManager(), "datePicker");
     }
 
-    @OnClick(R.id.rlTimePicker)
+    @OnClick(R.id.llTimePicker)
     void pickTime() {
         DialogFragment newFragment = new TimePickerFragment();
         newFragment.show(getFragmentManager(), "timePicker");
@@ -124,19 +123,19 @@ public class MainInfoActivity extends AppCompatActivity implements Validator.Val
 
         arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-        spTransport.setAdapter(arrayAdapter);
-
-        spTransport.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                transport = transports[position];
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-                transport = transports[0];
-            }
-        });
+//        spTransport.setAdapter(arrayAdapter);
+//
+//        spTransport.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+//            @Override
+//            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+//                transport = transports[position];
+//            }
+//
+//            @Override
+//            public void onNothingSelected(AdapterView<?> parent) {
+//                transport = transports[0];
+//            }
+//        });
     }
 
     @Override

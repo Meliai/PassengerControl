@@ -17,7 +17,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 
-public class FinalScreenActivity extends Activity {
+public class FinalScreenActivity extends BaseActivity {
 
     private static final int MAIL_APP_OPEN = 222;
     @BindView(R.id.send)

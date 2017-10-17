@@ -6,6 +6,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 
@@ -25,10 +26,12 @@ public class IssuesAdapter extends RecyclerView.Adapter<IssuesAdapter.IssuesAdap
     class IssuesAdapterViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         private TextView mIssue;
+        private CheckBox mCb;
 
         IssuesAdapterViewHolder(View view) {
             super(view);
             mIssue = (TextView) view.findViewById(R.id.tv_issue);
+            mCb = (CheckBox)view.findViewById(R.id.cb_item);
             view.setOnClickListener(this);
         }
 
@@ -36,7 +39,8 @@ public class IssuesAdapter extends RecyclerView.Adapter<IssuesAdapter.IssuesAdap
         public void onClick(View v) {
             int adapterPosition = getAdapterPosition();
             mClickHandler.onClick(mIssuesList[adapterPosition]);
-            v.setBackgroundColor(ContextCompat.getColor(context, R.color.colorPrimary));
+            mCb.setChecked(true);
+//            v.setBackgroundColor(ContextCompat.getColor(context, R.color.colorPrimary));
         }
     }
 

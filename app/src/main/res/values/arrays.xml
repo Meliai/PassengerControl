@@ -21,4 +21,16 @@
         <item>@string/tram</item>
     </string-array>
 
+    <integer-array name="transport_image_inactive">
+        <item>@drawable/ic_trolley</item>
+        <item>@drawable/ic_bus</item>
+        <item>@drawable/ic_tramv</item>
+    </integer-array>
+
+    <integer-array name="transport_image_active">
+        <item>@drawable/ic_trolley</item>
+        <item>@drawable/ic_bus</item>
+        <item>@drawable/ic_tramv</item>
+    </integer-array>
+
 </resources>

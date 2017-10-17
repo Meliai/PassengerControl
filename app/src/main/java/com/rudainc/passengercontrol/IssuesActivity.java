@@ -13,7 +13,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class IssuesActivity extends AppCompatActivity implements IssuesAdapter.IssueAdapterOnClickHandler{
+public class IssuesActivity extends BaseActivity implements IssuesAdapter.IssueAdapterOnClickHandler{
 
     private static final String EXTRA_DATA = "data";
     @BindView(R.id.rvIssues)
@@ -21,10 +21,6 @@ public class IssuesActivity extends AppCompatActivity implements IssuesAdapter.I
 
     ArrayList<String> issues = new ArrayList<>();
 
-    @OnClick(R.id.back)
-    void back() {
-        onBackPressed();
-    }
 
     @OnClick(R.id.forward)
     void forward() {
