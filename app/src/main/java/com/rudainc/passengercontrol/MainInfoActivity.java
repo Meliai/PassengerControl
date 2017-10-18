@@ -35,6 +35,7 @@ import com.rudainc.passengercontrol.util.Data;
 import io.fabric.sdk.android.Fabric;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import butterknife.BindView;
@@ -237,9 +238,10 @@ public class MainInfoActivity extends BaseActivity implements Validator.Validati
             int year = c.get(Calendar.YEAR);
             int month = c.get(Calendar.MONTH);
             int day = c.get(Calendar.DAY_OF_MONTH);
-
+            DatePickerDialog dialog =new DatePickerDialog(getActivity(), this, year, month, day);
+            dialog.getDatePicker().setMaxDate(new Date().getTime());
             // Create a new instance of DatePickerDialog and return it
-            return new DatePickerDialog(getActivity(), this, year, month, day);
+            return dialog;
         }
 
         public void onDateSet(DatePicker view, int year, int month, int day) {
