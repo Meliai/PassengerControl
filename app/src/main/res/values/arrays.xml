@@ -15,6 +15,7 @@
         <item>@string/point_11</item>
         <item>@string/point_12</item>
         <item>@string/point_13</item>
+        <item>@string/point_14</item>
     </string-array>
 
     <string-array name="transport">

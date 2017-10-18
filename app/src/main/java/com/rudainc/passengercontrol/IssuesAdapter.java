@@ -71,6 +71,6 @@ public class IssuesAdapter extends RecyclerView.Adapter<IssuesAdapter.IssuesAdap
     }
 
     public interface IssueAdapterOnClickHandler {
-        void onClick(String position, boolean add);
+        void onClick(String position, boolean add );
     }
 }

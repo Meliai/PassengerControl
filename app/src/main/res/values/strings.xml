@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Пасажирський Контроль</string>
+    <string name="app_name">ПасКонтроль</string>
 
     <!--Main Screen-->
     <string name="date">Дата:</string>
@@ -7,6 +7,8 @@
     <string name="transport">Оберіть вид транспорту:</string>
     <string name="route">Номер маршруту:</string>
     <string name="board_number">Бортовий номер:</string>
+    <string name="how_get_number">Як дізнатися бортовий номер?</string>
+    <string name="how_get_number_text">Бортовий номер вказаний біля кабіни водія або ззовні на рухомому складі.\n Переважно скаладється з 4 цифр</string>
     <string name="issues">Недоліки</string>
     <string name="mail_subject">Відгук щодо роботи транспорту #</string>
     <string name="transport_type">Вид транспорту:</string>
@@ -22,19 +24,20 @@
     <string name="tram">Трамвай</string>
 
     <!--Issues-->
-    <string name="point_1">Незадовільний санітарний стан рухомого складу зовні</string>
-    <string name="point_2">Незадовільний санітарний стан в салоні рухомого складу</string>
-    <string name="point_3">Відсутність стандартних маршрутних покажчиків на рухомому складі (№ маршруту, кінцеві пункти)</string>
-    <string name="point_4">Наявність пошкоджених пасажирських сидінь</string>
-    <string name="point_5">Наявність несправного освітлення салону</string>
-    <string name="point_6">Наявність несправного компостера</string>
-    <string name="point_7">Некоректна поведінка водія</string>
-    <string name="point_8">Не оголошення зупинок громадського транспорту</string>
-    <string name="point_9">Невидача квитків водієм</string>
-    <string name="point_10">Некоректна поведінка кондуктора</string>
-    <string name="point_11">Невидача квитків кондуктором</string>
-    <string name="point_12">Незадовільний технічний стан рухомого складу</string>
-    <string name="point_13">Інше (вкажіть недолік у полі коментарів перед формуванням листа)</string>
+    <string name="point_1">1. Незадовільний санітарний стан рухомого складу зовні</string>
+    <string name="point_2">2. Незадовільний санітарний стан в салоні рухомого складу</string>
+    <string name="point_3">3. Відсутність стандартних маршрутних покажчиків на рухомому складі (№ маршруту, кінцеві пункти)</string>
+    <string name="point_4">4. Наявність пошкоджених пасажирських сидінь</string>
+    <string name="point_5">5. Наявність несправного освітлення салону</string>
+    <string name="point_6">6. Наявність несправного компостера</string>
+    <string name="point_7">7. Некоректна поведінка водія</string>
+    <string name="point_8">8. Не оголошення зупинок громадського транспорту</string>
+    <string name="point_9">9. Невидача квитків водієм</string>
+    <string name="point_10">10. Некоректна поведінка кондуктора</string>
+    <string name="point_11">11. Невидача квитків кондуктором</string>
+    <string name="point_12">12. Незадовільний технічний стан рухомого складу</string>
+    <string name="point_13">13. Транспорт не вийшов на маршрут</string>
+    <string name="point_14">14. Інше (вкажіть недолік у полі коментарів перед формуванням листа)</string>
 
     <!--Feedback-->
     <string name="other">Інше:</string>
@@ -68,6 +71,7 @@
     <!--Ads-->
     <string name="ads_mobile_id">ca-app-pub-1227764705187744~5637028893</string>
     <string name="ads_banner"> ca-app-pub-1227764705187744/5604760375</string>
+
 
 
 </resources>

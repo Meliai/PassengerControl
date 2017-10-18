@@ -19,6 +19,8 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
+import static android.content.Intent.FLAG_ACTIVITY_CLEAR_TOP;
+
 
 public class FinalScreenActivity extends BaseActivity {
 
@@ -56,6 +58,7 @@ public class FinalScreenActivity extends BaseActivity {
         Log.i("SEND", content);
 
         Intent intent = new Intent(Intent.ACTION_SENDTO);
+        intent.setAction(Intent.ACTION_SENDTO);
         intent.setType("message/rfc822");
         intent.putExtra(Intent.EXTRA_SUBJECT, getResources().getString(R.string.mail_subject) + Data.getFeedbackInfo(this).board_number);
         intent.putExtra(Intent.EXTRA_TEXT, content);

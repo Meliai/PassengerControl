@@ -21,9 +21,7 @@ public class TransportView extends CardView {
 
     private ImageView mImageView;
 
-
-    private int margin = 16;
-    private int ELEMENTS_IN_VIEW = 3;
+    private int margin = 8;
     LinearLayout ll;
 
 
@@ -74,6 +72,7 @@ public class TransportView extends CardView {
         mTextViewTitle.setTextSize(TypedValue.COMPLEX_UNIT_PX,getResources().getDimension(R.dimen.text_size_16));
         mTextViewTitle.setTextColor(ContextCompat.getColor(context,R.color.colorBlack));
         param.weight = 1;
+        param.setMargins(margin, margin, margin, 32);
         mTextViewTitle.setLayoutParams(param);
 
         ll.addView(mTextViewTitle);
@@ -84,9 +83,11 @@ public class TransportView extends CardView {
         mImageView = new ImageView(context);
         LinearLayout.LayoutParams param = new LinearLayout.LayoutParams(
                 LayoutParams.MATCH_PARENT,
-               0
+               ViewGroup.LayoutParams.WRAP_CONTENT
         );
-        param.weight = 2;
+        param.weight = 3;
+        param.setMargins(0, 32, 0, 0);
+//        setPadding(margin, margin, margin, margin);
         mImageView.setLayoutParams(param);
 
         ll.addView(mImageView);
@@ -103,6 +104,6 @@ public class TransportView extends CardView {
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-        setMeasuredDimension(getMeasuredWidth(), getMeasuredWidth());
+//        setMeasuredDimension(getMeasuredWidth(), getMeasuredWidth());
     }
 }
