@@ -26,10 +26,14 @@
         </activity>
         <activity
             android:name=".FinalScreenActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden"/>
         <activity
             android:name=".IssuesActivity"
             android:screenOrientation="portrait" />
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="7d7fd6c6db42ce4358379e29442057671756df92" />
     </application>
 
 </manifest>

@@ -13,6 +13,8 @@
         <item>@string/point_9</item>
         <item>@string/point_10</item>
         <item>@string/point_11</item>
+        <item>@string/point_12</item>
+        <item>@string/point_13</item>
     </string-array>
 
     <string-array name="transport">

@@ -8,6 +8,8 @@ import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.format.DateFormat;
+import android.transition.Slide;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
@@ -16,15 +18,18 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import com.crashlytics.android.Crashlytics;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.mobsandgeeks.saripaar.ValidationError;
 import com.mobsandgeeks.saripaar.Validator;
+import com.mobsandgeeks.saripaar.annotation.Length;
 import com.mobsandgeeks.saripaar.annotation.NotEmpty;
 import com.rudainc.passengercontrol.transport_layout.Transport;
 import com.rudainc.passengercontrol.transport_layout.TransportLinearLayout;
 import com.rudainc.passengercontrol.util.Data;
 
+import io.fabric.sdk.android.Fabric;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.List;
@@ -53,6 +58,9 @@ public class MainInfoActivity extends BaseActivity implements Validator.Validati
 
     @BindView(R.id.ad_container)
     AdView mAdView;
+
+    @BindView(R.id.ll_trasport_type)
+    TransportLinearLayout mTransportLinearLayout;
 
     private int mYear;
     private int mMonth;
@@ -99,11 +107,15 @@ public class MainInfoActivity extends BaseActivity implements Validator.Validati
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Fabric.with(this, new Crashlytics());
         setContentView(R.layout.activity_main_info);
         ButterKnife.bind(this);
 
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
+
+        mTransportLinearLayout.setOnTransportChangeListener(this);
+        transport  = getString(R.string.trolleybus);
 
         transports = getResources().getStringArray(R.array.transport);
         // get the current date
@@ -124,7 +136,19 @@ public class MainInfoActivity extends BaseActivity implements Validator.Validati
         validator = new Validator(this);
         validator.setValidationListener(this);
 
+//        setupWindowAnimations();
+
     }
+
+//    private void setupWindowAnimations() {
+//
+//        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+//            Slide slide = new Slide();
+//            slide.setDuration(1000);
+//            getWindow().setExitTransition(slide);
+//        }
+//
+//    }
 
     @Override
     public void onValidationSucceeded() {
@@ -150,6 +174,7 @@ public class MainInfoActivity extends BaseActivity implements Validator.Validati
 
     @Override
     public void onChange(Transport item) {
+        Log.i("Transport",item.getTitle());
         transport = item.getTitle();
     }
 

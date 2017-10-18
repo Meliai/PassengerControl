@@ -1,7 +1,6 @@
 package com.rudainc.passengercontrol;
 
 import android.content.Context;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -38,9 +37,14 @@ public class IssuesAdapter extends RecyclerView.Adapter<IssuesAdapter.IssuesAdap
         @Override
         public void onClick(View v) {
             int adapterPosition = getAdapterPosition();
-            mClickHandler.onClick(mIssuesList[adapterPosition]);
-            mCb.setChecked(true);
-//            v.setBackgroundColor(ContextCompat.getColor(context, R.color.colorPrimary));
+            if(!mCb.isChecked()) {
+                mClickHandler.onClick(mIssuesList[adapterPosition], true);
+                mCb.setChecked(true);
+            }else{
+                mClickHandler.onClick(mIssuesList[adapterPosition], false);
+                mCb.setChecked(false);
+            }
+
         }
     }
 
@@ -67,6 +71,6 @@ public class IssuesAdapter extends RecyclerView.Adapter<IssuesAdapter.IssuesAdap
     }
 
     public interface IssueAdapterOnClickHandler {
-        void onClick(String position);
+        void onClick(String position, boolean add);
     }
 }

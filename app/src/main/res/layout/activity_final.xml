@@ -1,20 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_weight="1">
     <TextView
         android:id="@+id/tvThankYou"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/thank_you"
         android:layout_margin="50dp"
-        android:layout_centerHorizontal="true"
-        android:visibility="invisible"
-        />
-<Button
-    android:id="@+id/send"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="@string/send"
-    android:layout_centerInParent="true"/>
-</RelativeLayout>
+        android:text="@string/thank_you"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/ll_comments"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/padding_8"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/comments"
+            android:textColor="@color/colorText"
+            android:textSize="@dimen/text_size_14" />
+
+        <android.support.v7.widget.AppCompatEditText
+            android:id="@+id/etComments"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="top"
+            android:layout_margin="@dimen/padding_8"
+            android:layout_marginEnd="@dimen/padding_32"
+            android:layout_marginStart="@dimen/padding_32"
+            android:background="@drawable/field_boarders"
+            android:hint="@string/enter_comment"
+            android:imeOptions="actionDone"
+            android:inputType="textMultiLine"
+            android:lines="4"
+            android:maxLines="5"
+            android:padding="@dimen/padding_8"
+            android:textColorHint="@android:color/transparent" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_margin="@dimen/padding_8"
+        android:layout_below="@id/ll_comments">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/send"
+            style="@style/mCardView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/colorPrimary">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding_10"
+                android:text="@string/generate_mail"
+                android:textSize="@dimen/text_size_16"
+                android:textAllCaps="true"
+                android:textColor="@color/colorWhite"
+                android:layout_marginStart="@dimen/padding_16"
+                android:layout_marginEnd="@dimen/padding_16"/>
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+</LinearLayout>
+    <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/ad_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-3940256099942544/6300978111" />
+</LinearLayout>

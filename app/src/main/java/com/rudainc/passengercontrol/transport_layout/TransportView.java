@@ -73,6 +73,7 @@ public class TransportView extends CardView {
         mTextViewTitle.setGravity(Gravity.CENTER);
         mTextViewTitle.setTextSize(TypedValue.COMPLEX_UNIT_PX,getResources().getDimension(R.dimen.text_size_16));
         mTextViewTitle.setTextColor(ContextCompat.getColor(context,R.color.colorBlack));
+        param.weight = 1;
         mTextViewTitle.setLayoutParams(param);
 
         ll.addView(mTextViewTitle);
@@ -85,7 +86,7 @@ public class TransportView extends CardView {
                 LayoutParams.MATCH_PARENT,
                0
         );
-        param.weight = 1;
+        param.weight = 2;
         mImageView.setLayoutParams(param);
 
         ll.addView(mImageView);

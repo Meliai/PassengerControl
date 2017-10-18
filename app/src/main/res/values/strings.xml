@@ -9,6 +9,7 @@
     <string name="board_number">Бортовий номер:</string>
     <string name="issues">Недоліки</string>
     <string name="mail_subject">Відгук щодо роботи транспорту #</string>
+    <string name="transport_type">Вид транспорту:</string>
 
     <string name="bus">Автобус</string>
     <string name="trolleybus">Тролейбус</string>
@@ -26,15 +27,17 @@
     <string name="point_9">Невидача квитків водієм</string>
     <string name="point_10">Некоректна поведінка кондуктора</string>
     <string name="point_11">Невидача квитків кондуктором</string>
+    <string name="point_12">Незадовільний технічний стан рухомого складу</string>
+    <string name="point_13">Інше (вкажіть недолік у полі коментарів перед формуванням листа)</string>
 
     <!--Feedback-->
     <string name="other">Інше:</string>
     <string name="other_input_field">Будь ласка, вкажіть причину…</string>
 
     <!--Final Screen-->
-    <string name="send">Відправити</string>
+    <string name="generate_mail">Сформувати листа</string>
     <string name="cancel">Очистити</string>
-    <string name="comments">Коментарі</string>
+    <string name="comments">Коментарі:</string>
     <string name="phone_number">+38 050 332 01 23</string>
     <string name="email">monitoring@kpt.kiev.ua</string>
 
@@ -53,8 +56,15 @@
     <string name="cd_calendar">Calendar icon</string>
     <string name="cd_time">Clock icon</string>
 
+    <!--Errors-->
+
 
     <!--Ads-->
     <string name="ads_mobile_id">ca-app-pub-1227764705187744~5637028893</string>
     <string name="ads_banner"> ca-app-pub-1227764705187744/5604760375</string>
+    <string name="enter_comment">Додайте коментарі</string>
+    <string name="enter_number">#1234</string>
+    <string name="enter_route">#00</string>
+    <string name="choose_one">Оберіть один з недоліків</string>
+
 </resources>

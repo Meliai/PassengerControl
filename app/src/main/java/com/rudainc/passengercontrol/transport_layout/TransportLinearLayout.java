@@ -51,21 +51,23 @@ public class TransportLinearLayout extends LinearLayout {
                 addView(linearLayout);
             }
             if (linearLayout != null) {
-                TransportView transportView = initView(context, transports.get(i));
+                TransportView transportView = initView(context, transports.get(i), i == 0);
                 linearLayout.addView(transportView);
             }
         }
     }
 
-    private TransportView initView(final Context context, final Transport transport) {
+    private TransportView initView(final Context context, final Transport transport,boolean isFirst) {
         final TransportView transportView = new TransportView(getContext());
         transportViewsList.add(transportView);
         transportView.setItem(transport);
+        if(isFirst)
+            transportView.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.colorAccent));
         transportView.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 resetViews(context);
-//                onTransportChangeListener.onChange(transport);
+                onTransportChangeListener.onChange(transport);
                 if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
                     int x = transportView.getWidth() / 2;
                     int y = transportView.getHeight() / 2;
