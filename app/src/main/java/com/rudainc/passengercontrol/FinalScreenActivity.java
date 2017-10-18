@@ -1,11 +1,13 @@
 package com.rudainc.passengercontrol;
 
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.util.Log;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -46,6 +48,11 @@ public class FinalScreenActivity extends BaseActivity {
         for (int i = 0; i < getIntent().getStringArrayListExtra("data").size(); i++)
             issues = issues + getIntent().getStringArrayListExtra("data").get(i) + "\n";
 
+        View view = this.getCurrentFocus();
+        if (view != null) {
+            InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+        }
 
         String content = getResources().getString(R.string.date) + " " + Data.getFeedbackInfo(this).date +
                 "\n" + getResources().getString(R.string.time) + " " + Data.getFeedbackInfo(this).time +
@@ -62,34 +69,34 @@ public class FinalScreenActivity extends BaseActivity {
         intent.setType("message/rfc822");
         intent.putExtra(Intent.EXTRA_SUBJECT, getResources().getString(R.string.mail_subject) + Data.getFeedbackInfo(this).board_number);
         intent.putExtra(Intent.EXTRA_TEXT, content);
-        intent.setData(Uri.parse("mailto:y23helen@gmail.com"));
+        intent.setData(Uri.parse("mailto:"+getString(R.string.email)));
 
         try {
-            startActivityForResult(Intent.createChooser(intent, "Send mail..."), MAIL_APP_OPEN);
+            startActivity(Intent.createChooser(intent, "Send mail..."));
         } catch (android.content.ActivityNotFoundException ex) {
             Toast.makeText(this, "There are no email clients installed.", Toast.LENGTH_SHORT).show();
         }
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-
-        Log.i("SEND", requestCode + " " + resultCode);
-        if (requestCode == MAIL_APP_OPEN) {
-            switch (resultCode) {
-                case RESULT_OK:
-                    mSend.setVisibility(View.GONE);
-                    mLlComments.setVisibility(View.GONE);
-                    tvThankYou.setVisibility(View.VISIBLE);
-                    break;
-                case RESULT_CANCELED:
-                    Log.i("SEND", "dissmissed");
-                    break;
-            }
-        }
-        super.onActivityResult(requestCode, resultCode, data);
-
-    }
+//    @Override
+//    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+//
+//        Log.i("SEND", requestCode + " " + resultCode);
+//        if (requestCode == MAIL_APP_OPEN) {
+//            switch (resultCode) {
+//                case RESULT_OK:
+//                    mSend.setVisibility(View.GONE);
+//                    mLlComments.setVisibility(View.GONE);
+//                    tvThankYou.setVisibility(View.VISIBLE);
+//                    break;
+//                case RESULT_CANCELED:
+//                    Log.i("SEND", "dissmissed");
+//                    break;
+//            }
+//        }
+//        super.onActivityResult(requestCode, resultCode, data);
+//
+//    }
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {

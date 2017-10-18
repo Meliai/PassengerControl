@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -23,6 +24,7 @@ public class IssuesActivity extends BaseActivity implements IssuesAdapter.IssueA
 
     @OnClick(R.id.forward)
     void forward() {
+        Log.i("ISSUES", issues.size()+"");
         if(!issues.isEmpty()) {
             Intent intent = new Intent(this, FinalScreenActivity.class);
             intent.putStringArrayListExtra(EXTRA_DATA, issues);

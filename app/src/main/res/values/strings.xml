@@ -8,12 +8,12 @@
     <string name="route">Номер маршруту:</string>
     <string name="board_number">Бортовий номер:</string>
     <string name="how_get_number">Як дізнатися бортовий номер?</string>
-    <string name="how_get_number_text">Бортовий номер вказаний біля кабіни водія або ззовні на рухомому складі.\n Переважно скаладється з 4 цифр</string>
+    <string name="how_get_number_text">Бортовий номер вказаний біля кабіни водія або ззовні на рухомому складі.\nПереважно складається з 4 цифр.</string>
     <string name="issues">Недоліки</string>
     <string name="mail_subject">Відгук щодо роботи транспорту #</string>
     <string name="transport_type">Вид транспорту:</string>
     <string name="enter_comment">Додайте коментарі</string>
-    <string name="enter_number">#1234</string>
+    <string name="enter_number">#0000</string>
     <string name="enter_route">#00</string>
     <string name="choose_one">Оберіть один з недоліків</string>
     <string name="share">Поділитись</string>
@@ -71,6 +71,8 @@
     <!--Ads-->
     <string name="ads_mobile_id">ca-app-pub-1227764705187744~5637028893</string>
     <string name="ads_banner"> ca-app-pub-1227764705187744/5604760375</string>
+    <!--test-->
+    <!--<string name="ads_banner">ca-app-pub-3940256099942544/6300978111</string>-->
 
 
 
