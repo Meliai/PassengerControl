@@ -36,6 +36,7 @@ public class IssuesActivity extends BaseActivity implements IssuesAdapter.IssueA
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_issues);
         ButterKnife.bind(this);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         rvReviews.setLayoutManager(new LinearLayoutManager(this));
         IssuesAdapter mIssuesAdapter = new IssuesAdapter(this, getResources().getStringArray(R.array.issues), this);
         rvReviews.setAdapter(mIssuesAdapter);

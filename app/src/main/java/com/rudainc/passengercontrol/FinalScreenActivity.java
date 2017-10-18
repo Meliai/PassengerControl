@@ -50,7 +50,7 @@ public class FinalScreenActivity extends BaseActivity {
                 "\n" + getResources().getString(R.string.transport_type) + " " + Data.getFeedbackInfo(this).transport +
                 "\n" + getResources().getString(R.string.route) + " " + Data.getFeedbackInfo(this).route +
                 "\n" + getResources().getString(R.string.board_number) + " " + Data.getFeedbackInfo(this).board_number +
-                "\n" + getResources().getString(R.string.issues) + ":\n" + issues +
+                "\n"+"\n" + getResources().getString(R.string.issues) + ":\n" + issues +
                 "\n" + getResources().getString(R.string.comments) + "\n" + mComments.getText().toString().trim();
 
         Log.i("SEND", content);
@@ -93,6 +93,7 @@ public class FinalScreenActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_final);
         ButterKnife.bind(this);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);

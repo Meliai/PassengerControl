@@ -10,6 +10,12 @@
     <string name="issues">Недоліки</string>
     <string name="mail_subject">Відгук щодо роботи транспорту #</string>
     <string name="transport_type">Вид транспорту:</string>
+    <string name="enter_comment">Додайте коментарі</string>
+    <string name="enter_number">#1234</string>
+    <string name="enter_route">#00</string>
+    <string name="choose_one">Оберіть один з недоліків</string>
+    <string name="share">Поділитись</string>
+    <string name="share_text">Сформувати відгук щодо роботи міського транспорту тепер набагато простіше з мобільним додатком! \n</string>
 
     <string name="bus">Автобус</string>
     <string name="trolleybus">Тролейбус</string>
@@ -62,9 +68,6 @@
     <!--Ads-->
     <string name="ads_mobile_id">ca-app-pub-1227764705187744~5637028893</string>
     <string name="ads_banner"> ca-app-pub-1227764705187744/5604760375</string>
-    <string name="enter_comment">Додайте коментарі</string>
-    <string name="enter_number">#1234</string>
-    <string name="enter_route">#00</string>
-    <string name="choose_one">Оберіть один з недоліків</string>
+
 
 </resources>
