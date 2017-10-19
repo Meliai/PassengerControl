@@ -45,7 +45,7 @@ public class BaseActivity extends AppCompatActivity {
                 Answers.getInstance().logShare(new ShareEvent());
                 Intent intent = new Intent(Intent.ACTION_SEND);
                 intent.setType("text/plain");
-                String app_link = "https://play.google.com/store/apps/details?id=com.rudainc.popularmovies&hl=en";
+                String app_link = "https://play.google.com/store/apps/details?id=com.rudainc.passengercontrol";
                 intent.putExtra(Intent.EXTRA_TEXT, getString(R.string.share_text) + app_link);
                 startActivity(Intent.createChooser(intent, "Share with"));
                 break;

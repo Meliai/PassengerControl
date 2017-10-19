@@ -7,6 +7,8 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.rudainc.passengercontrol.model.IssuesModel;
+
 import java.util.ArrayList;
 
 import butterknife.BindView;
@@ -19,15 +21,14 @@ public class IssuesActivity extends BaseActivity implements IssuesAdapter.IssueA
     @BindView(R.id.rvIssues)
     RecyclerView rvReviews;
 
-    ArrayList<String> issues = new ArrayList<>();
+    ArrayList<Integer> issues = new ArrayList<>();
 
 
     @OnClick(R.id.forward)
     void forward() {
-        Log.i("ISSUES", issues.size()+"");
         if(!issues.isEmpty()) {
             Intent intent = new Intent(this, FinalScreenActivity.class);
-            intent.putStringArrayListExtra(EXTRA_DATA, issues);
+            intent.putIntegerArrayListExtra(EXTRA_DATA, issues);
             startActivity(intent);
         }else
             Toast.makeText(this,R.string.choose_one,Toast.LENGTH_SHORT).show();
@@ -45,11 +46,11 @@ public class IssuesActivity extends BaseActivity implements IssuesAdapter.IssueA
     }
 
     @Override
-    public void onClick(String issue, boolean add) {
+    public void onClick(int adapterPosition, boolean add) {
         if (add)
-            issues.add(issue);
+            issues.add(adapterPosition);
         else
-            issues.remove(issues.indexOf(issue));
+            issues.remove(issues.indexOf(adapterPosition));
 
     }
 }

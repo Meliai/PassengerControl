@@ -70,9 +70,9 @@
 
     <!--Ads-->
     <string name="ads_mobile_id">ca-app-pub-1227764705187744~5637028893</string>
-    <string name="ads_banner"> ca-app-pub-1227764705187744/5604760375</string>
+    <!--<string name="ads_banner"> ca-app-pub-1227764705187744/5604760375</string>-->
     <!--test-->
-    <!--<string name="ads_banner">ca-app-pub-3940256099942544/6300978111</string>-->
+    <string name="ads_banner">ca-app-pub-3940256099942544/6300978111</string>
 
 
 

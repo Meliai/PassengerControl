@@ -38,10 +38,10 @@ public class IssuesAdapter extends RecyclerView.Adapter<IssuesAdapter.IssuesAdap
         public void onClick(View v) {
             int adapterPosition = getAdapterPosition();
             if(!mCb.isChecked()) {
-                mClickHandler.onClick(mIssuesList[adapterPosition], true);
+                mClickHandler.onClick(adapterPosition, true);
                 mCb.setChecked(true);
             }else{
-                mClickHandler.onClick(mIssuesList[adapterPosition], false);
+                mClickHandler.onClick(adapterPosition, false);
                 mCb.setChecked(false);
             }
 
@@ -71,6 +71,6 @@ public class IssuesAdapter extends RecyclerView.Adapter<IssuesAdapter.IssuesAdap
     }
 
     public interface IssueAdapterOnClickHandler {
-        void onClick(String position, boolean add );
+        void onClick(int adapterPosition, boolean add);
     }
 }

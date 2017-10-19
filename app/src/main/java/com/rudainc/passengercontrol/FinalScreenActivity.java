@@ -13,9 +13,15 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.crashlytics.android.answers.Answers;
+import com.crashlytics.android.answers.CustomEvent;
+import com.crashlytics.android.answers.ShareEvent;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.rudainc.passengercontrol.util.Data;
+
+import java.util.ArrayList;
+import java.util.Collections;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -42,11 +48,16 @@ public class FinalScreenActivity extends BaseActivity {
     @BindView(R.id.ad_container)
     AdView mAdView;
 
+    private static final String EXTRA_DATA = "data";
+
     @OnClick(R.id.send)
     void send() {
-        String issues = "";
-        for (int i = 0; i < getIntent().getStringArrayListExtra("data").size(); i++)
-            issues = issues + getIntent().getStringArrayListExtra("data").get(i) + "\n";
+        Answers.getInstance().logCustom(new CustomEvent("Send feedback"));
+        StringBuilder issues = new StringBuilder();
+        ArrayList<Integer> list = getIntent().getIntegerArrayListExtra(EXTRA_DATA);
+        Collections.sort(list);
+        for (int i = 0; i < list.size(); i++)
+            issues.append(getResources().getStringArray(R.array.issues)[getIntent().getIntegerArrayListExtra(EXTRA_DATA).get(i)]).append("\n");
 
         View view = this.getCurrentFocus();
         if (view != null) {
