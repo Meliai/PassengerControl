@@ -11,10 +11,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.text.format.DateFormat;
-import android.transition.Slide;
-import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -26,13 +23,11 @@ import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.mobsandgeeks.saripaar.ValidationError;
 import com.mobsandgeeks.saripaar.Validator;
-import com.mobsandgeeks.saripaar.annotation.Length;
 import com.mobsandgeeks.saripaar.annotation.NotEmpty;
 import com.rudainc.passengercontrol.transport_layout.Transport;
 import com.rudainc.passengercontrol.transport_layout.TransportLinearLayout;
 import com.rudainc.passengercontrol.util.Data;
 
-import io.fabric.sdk.android.Fabric;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -41,6 +36,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import io.fabric.sdk.android.Fabric;
 
 public class MainInfoActivity extends BaseActivity implements Validator.ValidationListener, TransportLinearLayout.OnTransportChangeListener {
 
@@ -72,7 +68,7 @@ public class MainInfoActivity extends BaseActivity implements Validator.Validati
     private String date;
     private String time;
     private String transport;
-    private ArrayAdapter<String> arrayAdapter;
+
     private DatePickerDialog.OnDateSetListener mDateSetListener =
             new DatePickerDialog.OnDateSetListener() {
                 public void onDateSet(DatePicker view, int year,
@@ -88,7 +84,7 @@ public class MainInfoActivity extends BaseActivity implements Validator.Validati
     private Validator validator;
 
     @OnClick(R.id.getBoardNumber)
-    void showDialog(){
+    void showDialog() {
         AlertDialog.Builder builder;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             builder = new AlertDialog.Builder(this, android.R.style.Theme_Material_Dialog_Alert);
@@ -139,7 +135,7 @@ public class MainInfoActivity extends BaseActivity implements Validator.Validati
         mAdView.loadAd(adRequest);
 
         mTransportLinearLayout.setOnTransportChangeListener(this);
-        transport  = getString(R.string.trolleybus);
+        transport = getString(R.string.trolleybus);
 
         transports = getResources().getStringArray(R.array.transport);
         // get the current date
@@ -198,7 +194,6 @@ public class MainInfoActivity extends BaseActivity implements Validator.Validati
 
     @Override
     public void onChange(Transport item) {
-        Log.i("Transport",item.getTitle());
         transport = item.getTitle();
     }
 
@@ -238,7 +233,7 @@ public class MainInfoActivity extends BaseActivity implements Validator.Validati
             int year = c.get(Calendar.YEAR);
             int month = c.get(Calendar.MONTH);
             int day = c.get(Calendar.DAY_OF_MONTH);
-            DatePickerDialog dialog =new DatePickerDialog(getActivity(), this, year, month, day);
+            DatePickerDialog dialog = new DatePickerDialog(getActivity(), this, year, month, day);
             dialog.getDatePicker().setMaxDate(new Date().getTime());
             // Create a new instance of DatePickerDialog and return it
             return dialog;
