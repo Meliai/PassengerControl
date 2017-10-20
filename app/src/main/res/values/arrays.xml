@@ -18,6 +18,23 @@
         <item>@string/point_14</item>
     </string-array>
 
+    <string-array name="issues_kpt">
+        <item>@string/p_1</item>
+        <item>@string/p_2</item>
+        <item>@string/p_3</item>
+        <item>@string/p_4</item>
+        <item>@string/p_5</item>
+        <item>@string/p_6</item>
+        <item>@string/p_7</item>
+        <item>@string/p_8</item>
+        <item>@string/p_9</item>
+        <item>@string/p_10</item>
+        <item>@string/p_11</item>
+        <item>@string/p_12</item>
+        <item>@string/p_13</item>
+        <item>@string/p_14</item>
+    </string-array>
+
     <string-array name="transport">
         <item>@string/trolleybus</item>
         <item>@string/bus</item>

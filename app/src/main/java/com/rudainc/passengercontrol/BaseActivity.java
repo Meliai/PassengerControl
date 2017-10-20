@@ -10,6 +10,7 @@ import android.view.MenuItem;
 
 import com.crashlytics.android.Crashlytics;
 import com.crashlytics.android.answers.Answers;
+import com.crashlytics.android.answers.CustomEvent;
 import com.crashlytics.android.answers.ShareEvent;
 import com.google.android.gms.ads.MobileAds;
 
@@ -48,6 +49,9 @@ public class BaseActivity extends AppCompatActivity {
                 String app_link = "https://play.google.com/store/apps/details?id=com.rudainc.passengercontrol";
                 intent.putExtra(Intent.EXTRA_TEXT, getString(R.string.share_text) + app_link);
                 startActivity(Intent.createChooser(intent, "Share with"));
+                break;
+            case R.id.arrow_forward:
+                Answers.getInstance().logCustom(new CustomEvent(getString(R.string.event_go_to_final_arrow)));
                 break;
         }
         return true;

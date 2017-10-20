@@ -18,26 +18,43 @@
     <string name="choose_one">Оберіть один з недоліків</string>
     <string name="share">Поділитись</string>
     <string name="share_text">Сформувати відгук щодо роботи міського транспорту тепер набагато простіше з мобільним додатком! \n</string>
+    <string name="title_choose">Оберіть недоліки</string>
 
     <string name="bus">Автобус</string>
     <string name="trolleybus">Тролейбус</string>
     <string name="tram">Трамвай</string>
 
     <!--Issues-->
-    <string name="point_1">1. Незадовільний санітарний стан рухомого складу зовні</string>
-    <string name="point_2">2. Незадовільний санітарний стан в салоні рухомого складу</string>
-    <string name="point_3">3. Відсутність стандартних маршрутних покажчиків на рухомому складі (№ маршруту, кінцеві пункти)</string>
-    <string name="point_4">4. Наявність пошкоджених пасажирських сидінь</string>
-    <string name="point_5">5. Наявність несправного освітлення салону</string>
-    <string name="point_6">6. Наявність несправного компостера</string>
-    <string name="point_7">7. Некоректна поведінка водія</string>
-    <string name="point_8">8. Не оголошення зупинок громадського транспорту</string>
-    <string name="point_9">9. Невидача квитків водієм</string>
-    <string name="point_10">10. Некоректна поведінка кондуктора</string>
-    <string name="point_11">11. Невидача квитків кондуктором</string>
-    <string name="point_12">12. Незадовільний технічний стан рухомого складу</string>
-    <string name="point_13">13. Транспорт не вийшов на маршрут</string>
-    <string name="point_14">14. Інше (вкажіть недолік у полі коментарів перед формуванням листа)</string>
+    <string name="point_1">Транспорт брудний ззовні</string>
+    <string name="point_2">Брудно всередині транспорту</string>
+    <string name="point_3">Не вказані номер маршуту та кінцеві зупинки зовні транспорту</string>
+    <string name="point_4">Пошкоджені пасажирські сидіння</string>
+    <string name="point_5">Несправне освітлення у салоні</string>
+    <string name="point_6">Не працює компостер (Зламаний або відсутній)</string>
+    <string name="point_7">Некоректна поведінка водія</string>
+    <string name="point_8">Зупинки не оголошуються</string>
+    <string name="point_9">Водій не видав квиток</string>
+    <string name="point_10">Некоректна поведінка кондуктора</string>
+    <string name="point_11">Кондуктор не видав квиток</string>
+    <string name="point_12">Поганий технічний стан транспорту</string>
+    <string name="point_13">Транспорт не вийшов на маршрут</string>
+    <string name="point_14">Інше (вкажіть недолік у полі коментарів перед формуванням листа)</string>
+
+    <!--Issues to KPT-->
+    <string name="p_1" translatable="false">1. Незадовільний санітарний стан рухомого складу зовні</string>
+    <string name="p_2" translatable="false">2. Незадовільний санітарний стан в салоні рухомого складу</string>
+    <string name="p_3" translatable="false">3. Відсутність стандартних маршрутних покажчиків на рухомому складі (№ маршруту, кінцеві пункти)</string>
+    <string name="p_4" translatable="false">4. Наявність пошкоджених пасажирських сидінь</string>
+    <string name="p_5" translatable="false">5. Наявність несправного освітлення салону</string>
+    <string name="p_6" translatable="false">6. Наявність несправного компостера</string>
+    <string name="p_7" translatable="false">7. Некоректна поведінка водія</string>
+    <string name="p_8" translatable="false">8. Не оголошення зупинок громадського транспорту</string>
+    <string name="p_9" translatable="false">9. Невидача квитків водієм</string>
+    <string name="p_10" translatable="false">10. Некоректна поведінка кондуктора</string>
+    <string name="p_11" translatable="false">11. Невидача квитків кондуктором</string>
+    <string name="p_12" translatable="false">12. Незадовільний технічний стан рухомого складу</string>
+    <string name="p_13" translatable="false">13. Транспорт не вийшов на маршрут</string>
+    <string name="p_14" translatable="false">14. Інше (вкажіть недолік у полі коментарів перед формуванням листа)</string>
 
     <!--Feedback-->
     <string name="other">Інше:</string>
@@ -62,10 +79,15 @@
 
 
     <!--Content Description-->
-    <string name="cd_calendar">Calendar icon</string>
-    <string name="cd_time">Clock icon</string>
+    <string name="cd_calendar">Календар</string>
+    <string name="cd_time">Годинник</string>
 
-    <!--Errors-->
+    <!--Fabric-->
+    <string name="event_transport" translatable="false">Chosen Transport</string>
+    <string name="event_transport_type" translatable="false">Transport Type</string>
+    <string name="event_go_to_issues" translatable="false">Go to Issues button</string>
+    <string name="event_go_to_final" translatable="false">Go to Final Screen button</string>
+    <string name="event_go_to_final_arrow" translatable="false">Go to Final Screen via Arrow</string>
 
 
     <!--Ads-->

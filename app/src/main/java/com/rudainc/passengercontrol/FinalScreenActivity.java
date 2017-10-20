@@ -57,7 +57,7 @@ public class FinalScreenActivity extends BaseActivity {
         ArrayList<Integer> list = getIntent().getIntegerArrayListExtra(EXTRA_DATA);
         Collections.sort(list);
         for (int i = 0; i < list.size(); i++)
-            issues.append(getResources().getStringArray(R.array.issues)[getIntent().getIntegerArrayListExtra(EXTRA_DATA).get(i)]).append("\n");
+            issues.append(getResources().getStringArray(R.array.issues_kpt)[getIntent().getIntegerArrayListExtra(EXTRA_DATA).get(i)]).append("\n");
 
         View view = this.getCurrentFocus();
         if (view != null) {

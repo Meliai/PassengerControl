@@ -19,6 +19,9 @@ import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.crashlytics.android.Crashlytics;
+import com.crashlytics.android.answers.Answers;
+import com.crashlytics.android.answers.ContentViewEvent;
+import com.crashlytics.android.answers.CustomEvent;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.mobsandgeeks.saripaar.ValidationError;
@@ -127,7 +130,6 @@ public class MainInfoActivity extends BaseActivity implements Validator.Validati
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Fabric.with(this, new Crashlytics());
         setContentView(R.layout.activity_main_info);
         ButterKnife.bind(this);
 
@@ -175,6 +177,9 @@ public class MainInfoActivity extends BaseActivity implements Validator.Validati
         Intent intent = new Intent(MainInfoActivity.this, IssuesActivity.class);
         startActivity(intent);
         saveData();
+        Answers.getInstance().logCustom(new CustomEvent(getString(R.string.event_transport))
+                .putCustomAttribute(getString(R.string.event_transport_type),transport));
+        Answers.getInstance().logCustom(new CustomEvent(getString(R.string.event_go_to_issues)));
     }
 
     @Override

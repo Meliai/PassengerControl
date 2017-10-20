@@ -7,4 +7,12 @@
     android:icon="@drawable/ic_share"
     app:showAsAction="always"
     />
+
+    <item
+        android:id="@+id/arrow_forward"
+        android:title="@string/forward"
+        android:icon="@drawable/ic_next"
+       android:visible="false"
+        app:showAsAction="ifRoom"
+        />
 </menu>
