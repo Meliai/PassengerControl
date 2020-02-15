@@ -3,7 +3,7 @@ package com.rudainc.passengercontrol.transport_layout
 import android.animation.Animator
 import android.content.Context
 import android.content.res.TypedArray
-import android.support.v4.content.ContextCompat
+import androidx.core.content.ContextCompat
 import android.util.AttributeSet
 import android.view.View
 import android.view.ViewAnimationUtils

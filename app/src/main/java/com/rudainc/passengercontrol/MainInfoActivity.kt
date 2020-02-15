@@ -5,63 +5,38 @@ import android.app.DatePickerDialog
 import android.app.Dialog
 import android.app.DialogFragment
 import android.app.TimePickerDialog
-import android.content.DialogInterface
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
-import android.support.v7.app.AlertDialog
+import androidx.appcompat.app.AlertDialog
 import android.text.format.DateFormat
-import android.view.View
-import android.widget.DatePicker
-import android.widget.EditText
-import android.widget.TextView
-import android.widget.TimePicker
-import android.widget.Toast
-
-import com.crashlytics.android.Crashlytics
+import android.widget.*
 import com.crashlytics.android.answers.Answers
-import com.crashlytics.android.answers.ContentViewEvent
 import com.crashlytics.android.answers.CustomEvent
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdView
 import com.mobsandgeeks.saripaar.ValidationError
 import com.mobsandgeeks.saripaar.Validator
-import com.mobsandgeeks.saripaar.annotation.NotEmpty
 import com.rudainc.passengercontrol.transport_layout.Transport
 import com.rudainc.passengercontrol.transport_layout.TransportLinearLayout
 import com.rudainc.passengercontrol.util.Data
-
 import java.text.SimpleDateFormat
-import java.util.Calendar
-import java.util.Date
-
-import butterknife.BindView
-import butterknife.ButterKnife
-import butterknife.OnClick
-import io.fabric.sdk.android.Fabric
+import java.util.*
 
 class MainInfoActivity : BaseActivity(), Validator.ValidationListener, TransportLinearLayout.OnTransportChangeListener {
 
     private lateinit var transports: Array<String>
 
-    @BindView(R.id.tvDate)
     internal var tvDate: TextView? = null
 
-    @BindView(R.id.tvTime)
     internal var tvTime: TextView? = null
 
-    @NotEmpty
-    @BindView(R.id.etRoute)
     internal var etRoute: EditText? = null
 
-    @NotEmpty
-    @BindView(R.id.etBoardNumber)
     internal var etBoardNumber: EditText? = null
 
-    @BindView(R.id.ad_container)
     internal var mAdView: AdView? = null
 
-    @BindView(R.id.ll_trasport_type)
     internal var mTransportLinearLayout: TransportLinearLayout? = null
 
     private var mYear: Int = 0
@@ -81,7 +56,6 @@ class MainInfoActivity : BaseActivity(), Validator.ValidationListener, Transport
     }
     private var validator: Validator? = null
 
-    @OnClick(R.id.getBoardNumber)
     internal fun showDialog() {
         val builder: AlertDialog.Builder
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
@@ -97,22 +71,22 @@ class MainInfoActivity : BaseActivity(), Validator.ValidationListener, Transport
         //          .setIcon(android.R.drawable.ic_dialog_alert)
     }
 
-    @OnClick(R.id.llDatePicker)
-    internal fun pickDate() {
-        val newFragment = DatePickerFragment()
-        newFragment.show(fragmentManager, "datePicker")
-    }
-
-    @OnClick(R.id.llTimePicker)
-    internal fun pickTime() {
-        val newFragment = TimePickerFragment()
-        newFragment.show(fragmentManager, "timePicker")
-    }
-
-    @OnClick(R.id.go)
-    internal fun forward() {
-        validator!!.validate()
-    }
+//    @OnClick(R.id.llDatePicker)
+//    internal fun pickDate() {
+//        val newFragment = DatePickerFragment()
+//        newFragment.show(fragmentManager, "datePicker")
+//    }
+//
+//    @OnClick(R.id.llTimePicker)
+//    internal fun pickTime() {
+//        val newFragment = TimePickerFragment()
+//        newFragment.show(fragmentManager, "timePicker")
+//    }
+//
+//    @OnClick(R.id.go)
+//    internal fun forward() {
+//        validator!!.validate()
+//    }
 
     private fun saveData() {
         Data.setData(this, date, time, transport, etRoute?.text.toString(), etBoardNumber?.text.toString())
@@ -121,7 +95,6 @@ class MainInfoActivity : BaseActivity(), Validator.ValidationListener, Transport
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_info)
-        ButterKnife.bind(this)
 
         val adRequest = AdRequest.Builder().build()
         mAdView?.loadAd(adRequest)

@@ -4,49 +4,17 @@ import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.support.v7.widget.CardView
 import android.util.Log
-import android.view.View
 import android.view.inputmethod.InputMethodManager
-import android.widget.EditText
-import android.widget.LinearLayout
-import android.widget.TextView
 import android.widget.Toast
-
 import com.crashlytics.android.answers.Answers
 import com.crashlytics.android.answers.CustomEvent
-import com.crashlytics.android.answers.ShareEvent
 import com.google.android.gms.ads.AdRequest
-import com.google.android.gms.ads.AdView
 import com.rudainc.passengercontrol.util.Data
-
-import java.util.ArrayList
-import java.util.Collections
-
-import butterknife.BindView
-import butterknife.ButterKnife
-import butterknife.OnClick
-
-import android.content.Intent.FLAG_ACTIVITY_CLEAR_TOP
+import java.util.*
 
 
 class FinalScreenActivity : BaseActivity() {
-    @BindView(R.id.send)
-    internal var mSend: CardView? = null
-
-    @BindView(R.id.tvThankYou)
-    internal var tvThankYou: TextView? = null
-
-    @BindView(R.id.etComments)
-    internal var mComments: EditText? = null
-
-    @BindView(R.id.ll_comments)
-    internal var mLlComments: LinearLayout? = null
-
-    @BindView(R.id.ad_container)
-    internal var mAdView: AdView? = null
-
-    @OnClick(R.id.send)
     internal fun send() {
         Answers.getInstance().logCustom(CustomEvent("Send feedback"))
         val issues = StringBuilder()
@@ -66,10 +34,10 @@ class FinalScreenActivity : BaseActivity() {
                 "\n" + resources.getString(R.string.transport_type) + " " + Data.getFeedbackInfo(this).transport +
                 "\n" + resources.getString(R.string.route) + " " + Data.getFeedbackInfo(this).route +
                 "\n" + resources.getString(R.string.board_number) + " " + Data.getFeedbackInfo(this).boardNumber +
-                "\n" + "\n" + resources.getString(R.string.issues) + ":\n" + issues +
-                "\n" + resources.getString(R.string.comments) + "\n" + mComments!!.text.toString().trim { it <= ' ' }
+                "\n" + "\n" + resources.getString(R.string.issues) + ":\n" + issues
+//                "\n" + resources.getString(R.string.comments) + "\n" + mComments!!.text.toString().trim { it <= ' ' }
 
-        Log.i("SEND", content)
+//        Log.i("SEND", content)
 
         val intent = Intent(Intent.ACTION_SENDTO)
         intent.action = Intent.ACTION_SENDTO
@@ -109,11 +77,10 @@ class FinalScreenActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_final)
-        ButterKnife.bind(this)
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
 
         val adRequest = AdRequest.Builder().build()
-        mAdView!!.loadAd(adRequest)
+//        mAdView!!.loadAd(adRequest)
 
     }
 

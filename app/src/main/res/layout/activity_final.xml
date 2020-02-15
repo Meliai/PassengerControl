@@ -32,7 +32,7 @@
             android:textColor="@color/colorText"
             android:textSize="@dimen/text_size_14" />
 
-        <android.support.v7.widget.AppCompatEditText
+        <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/etComments"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -57,7 +57,7 @@
         android:layout_margin="@dimen/padding_8"
         android:layout_below="@id/ll_comments">
 
-        <android.support.v7.widget.CardView
+        <androidx.cardview.widget.CardView
             android:id="@+id/send"
             style="@style/mCardView"
             android:layout_width="wrap_content"
@@ -74,7 +74,7 @@
                 android:textColor="@color/colorWhite"
                 android:layout_marginStart="@dimen/padding_16"
                 android:layout_marginEnd="@dimen/padding_16"/>
-        </android.support.v7.widget.CardView>
+        </androidx.cardview.widget.CardView>
 
     </LinearLayout>
 </LinearLayout>

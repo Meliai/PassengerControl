@@ -2,8 +2,8 @@ package com.rudainc.passengercontrol
 
 import android.content.Intent
 import android.os.Bundle
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
@@ -14,18 +14,11 @@ import com.crashlytics.android.answers.CustomEvent
 
 import java.util.ArrayList
 
-import butterknife.BindView
-import butterknife.ButterKnife
-import butterknife.OnClick
-
 class IssuesActivity : BaseActivity(), IssuesAdapter.IssueAdapterOnClickHandler {
-    @BindView(R.id.rvIssues)
-    internal var rvReviews: RecyclerView? = null
 
     internal var issues = ArrayList<Int>()
 
 
-    @OnClick(R.id.forward)
     internal fun forward() {
         doNext()
         Answers.getInstance().logCustom(CustomEvent(getString(R.string.event_go_to_final)))
@@ -43,12 +36,11 @@ class IssuesActivity : BaseActivity(), IssuesAdapter.IssueAdapterOnClickHandler 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_issues)
-        ButterKnife.bind(this)
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         supportActionBar!!.setTitle(R.string.title_choose)
-        rvReviews!!.layoutManager = LinearLayoutManager(this)
+//        rvReviews!!.layoutManager = LinearLayoutManager(this)
         val mIssuesAdapter = IssuesAdapter(this, resources.getStringArray(R.array.issues), this)
-        rvReviews!!.adapter = mIssuesAdapter
+//        rvReviews!!.adapter = mIssuesAdapter
     }
 
     override fun onClick(adapterPosition: Int, add: Boolean) {
